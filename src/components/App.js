@@ -14,7 +14,7 @@ const ParentComponent = () => {
   let [isLoggedIn, setIsLoggedIn] = useState(false);
   return (
     <div>
-      {isLoggedIn ? <p>You are logged in!</p> : <ChildComponent setIsLoggedIn={setIsLoggedIn} />}
+      {isLoggedIn ? <h1>You are logged in!</h1> : <ChildComponent setIsLoggedIn={setIsLoggedIn} />}
     </div>
   )
 }
