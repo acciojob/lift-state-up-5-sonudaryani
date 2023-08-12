@@ -1,40 +1,46 @@
-
 import React, { useState } from "react";
-import "../styles/App.css";
 
 const App = () => {
   return (
     <div>
-        <ParentComponent />
+      <ParentComponent />
     </div>
-  )
-}
+  );
+};
 
 const ParentComponent = () => {
   let [isLoggedIn, setIsLoggedIn] = useState(false);
   return (
-    <div>
-      {isLoggedIn ? <h1>You are logged in!</h1> : <ChildComponent setIsLoggedIn={setIsLoggedIn} />}
+    <div className="parent">
+      <h1>Parent Component</h1>
+      {isLoggedIn ? (
+        <p>You are logged in!</p>
+      ) : (
+        <ChildComponent setIsLoggedIn={setIsLoggedIn} />
+      )}
     </div>
-  )
-}
+  );
+};
 
-const ChildComponent = ({setIsLoggedIn}) => {
+const ChildComponent = ({ setIsLoggedIn }) => {
   const handleClick = () => {
     setIsLoggedIn(true);
-  }
+  };
   return (
-    <div>
+    <div className="child">
       <form>
         <label>Username: </label>
-        <input type='text' /><br/>
+        <input type="text" />
+        <br />
         <label>Password: </label>
-        <input type='password' /><br/>
-        <button type='submit' onClick={handleClick}>Login</button>
+        <input type="password" />
+        <br />
+        <button type="submit" onClick={handleClick}>
+          Login
+        </button>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default App
-
+export default App;
